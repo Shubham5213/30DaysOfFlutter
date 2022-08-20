@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      // debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      // initialRoute: '/',
+      initialRoute: '/home',
       routes: {
         "/": (context) => const LoginPage(),
         '/home': (context) => const HomePage(),

@@ -10,7 +10,10 @@ class HomePage extends StatelessWidget {
     const String name = " IIT Kharagpur";
     return Scaffold(
       appBar: AppBar(
-        title: Text("Catalog App"),
+        title: Text(
+          "Catalog App",
+        ),
+        centerTitle: true,
       ),
       body: Center(
         child: Container(

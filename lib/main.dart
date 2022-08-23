@@ -3,6 +3,7 @@ import 'package:first_app/pages/login_page.dart';
 import 'package:first_app/widgets/themes.dart';
 // import 'package:first_app/utils/routes.dart';
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 
 // ignore_for_file: prefer_const_constructors
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme(context),
       debugShowCheckedModeBanner: false,
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: {
         "/": (context) => const LoginPage(),
         '/home': (context) => const HomePage(),

@@ -39,7 +39,7 @@ class MyTheme {
         iconTheme: IconThemeData(color: Colors.white),
         titleTextStyle: TextStyle(
           fontSize: 20.0,
-          color: Colors.black,
+          color: Colors.white,
           fontWeight: FontWeight.w600,
         ),
       ));

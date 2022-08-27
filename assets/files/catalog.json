@@ -65,7 +65,7 @@
             "image": "https://images.samsung.com/is/image/samsung/p6pim/za/galaxy-s21/gallery/za-clear-cover-galaxy-s21-5g-ef-qg991ttegww-363168624?$720_576_PNG$"
         },
         {
-            "id": 7,
+            "id": 9,
             "name": "Galaxy S21 Ultra",
             "desc": "Samsung Galaxy S21 Ultra 2021 edition",
             "price": 1299,
@@ -73,7 +73,7 @@
             "image": "https://lh3.googleusercontent.com/qRQPjHrhRVIs-xnfNSyiPXOH2vH97ylMacgbTKebqJtRfNH3LlYo8pN-5igsLDWUH62tGl5zNpTsl5xd8SprzGmXoCEmWFOi2-2cQVGS-r3PaRXHt62DmJHq-jrYX0UQvWZ9BA=s800-c"
         },
         {
-            "id": 5,
+            "id": 10,
             "name": "Airpods Pro",
             "desc": "Apple Aipods Pro 1st generation",
             "price": 200,

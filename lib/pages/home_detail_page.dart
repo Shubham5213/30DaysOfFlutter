@@ -14,9 +14,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamish,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -25,10 +25,11 @@ class HomeDetailPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(MyTheme.blueish),
+                  backgroundColor:
+                      MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
               child: "Add to Cart".text.make(),
-            ).wh(120, 40)
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -45,11 +46,14 @@ class HomeDetailPage extends StatelessWidget {
             arcType: VxArcType.CONVEY,
             edge: VxEdge.TOP,
             child: Container(
-              color: Colors.white,
+              color: context.cardColor,
               width: context.screenWidth,
               child: Column(
                 children: [
-                  catalog.name.text.xl4.color(MyTheme.blueish).bold.make(),
+                  catalog.name.text.xl4
+                      .color(context.theme.colorScheme.secondary)
+                      .bold
+                      .make(),
                   catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                   10.heightBox,
                   "Nos bleuités fortes éveils des chanteurs pommes . D'oiseaux un l'éther de les au vers ces vu crouler, bateau des grappin blonds comme les - dansé rouleurs, - mes des ont qu'un sourd des anciens, et ces  électriques me genoux, et fientes un houle jaunes horribles les qui pensif.."
@@ -61,7 +65,7 @@ class HomeDetailPage extends StatelessWidget {
               ).py64(),
             ),
           )),
-        ]).p16(),
+        ]),
       ),
     );
   }

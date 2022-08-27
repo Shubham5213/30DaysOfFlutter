@@ -1,6 +1,7 @@
 import 'package:first_app/models/catalog.dart';
 import 'package:first_app/widgets/home_widgets/catalog_list.dart';
 import 'package:first_app/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -40,6 +41,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamish,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, "/cart");
+        },
+        backgroundColor: MyTheme.blueish,
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m16,
@@ -48,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               CatalogHeader(),
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().py16().expand()
+                CatalogList().pOnly(top: 16, bottom: 32).expand()
               else
                 CircularProgressIndicator().centered().expand(),
             ],

@@ -11,7 +11,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamish,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -25,8 +27,8 @@ class HomeDetailPage extends StatelessWidget {
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(MyTheme.blueish),
                   shape: MaterialStateProperty.all(StadiumBorder())),
-              child: "Buy".text.xl2.make(),
-            ).wh(100, 40)
+              child: "Add to Cart".text.make(),
+            ).wh(120, 40)
           ],
         ).p32(),
       ),
@@ -50,6 +52,11 @@ class HomeDetailPage extends StatelessWidget {
                   catalog.name.text.xl4.color(MyTheme.blueish).bold.make(),
                   catalog.desc.text.textStyle(context.captionStyle).xl.make(),
                   10.heightBox,
+                  "Nos bleuités fortes éveils des chanteurs pommes . D'oiseaux un l'éther de les au vers ces vu crouler, bateau des grappin blonds comme les - dansé rouleurs, - mes des ont qu'un sourd des anciens, et ces  électriques me genoux, et fientes un houle jaunes horribles les qui pensif.."
+                      .text
+                      .textStyle(context.captionStyle)
+                      .make()
+                      .p16(),
                 ],
               ).py64(),
             ),

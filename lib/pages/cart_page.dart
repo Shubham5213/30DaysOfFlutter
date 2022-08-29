@@ -22,7 +22,7 @@ class CartPage extends StatelessWidget {
           Divider(),
           _CartTotal(),
         ],
-      ),
+      ), 
     );
   }
 }

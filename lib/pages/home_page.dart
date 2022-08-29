@@ -1,3 +1,5 @@
+import 'package:first_app/core/store.dart';
+import 'package:first_app/models/cart.dart';
 import 'package:first_app/models/catalog.dart';
 import 'package:first_app/widgets/home_widgets/catalog_list.dart';
 import 'package:first_app/widgets/themes.dart';
@@ -6,7 +8,7 @@ import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'dart:convert';
-
+import 'package:http/http.dart' as http;
 import '../widgets/home_widgets/catalog_header.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // final url = "";
   @override
   void initState() {
     super.initState();
@@ -25,7 +28,11 @@ class _HomePageState extends State<HomePage> {
 
   loadData() async {
     await Future.delayed(Duration(seconds: 2));
-    var catalogJson = await rootBundle.loadString(
+
+    // final response = await http.get(Uri.parse(url));
+    // final catalogJson = response.body;
+
+    final catalogJson = await rootBundle.loadString(
       "./assets/files/catalog.json",
     );
     var decodedData = jsonDecode(catalogJson);
@@ -39,17 +46,28 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
       backgroundColor: context.canvasColor,
-      floatingActionButton: FloatingActionButton(
-        heroTag: Text("Btn1"),
-        onPressed: () => Navigator.pushNamed(context, "/cart"),
-        // ignore: deprecated_member_use
-        backgroundColor: context.theme.buttonColor,
-        child: Icon(
-          CupertinoIcons.cart,
-          color: Colors.white,
-        ),
+      floatingActionButton: VxBuilder(
+        mutations: const {AddMutation, RemoveMutation},
+        builder: (context, _, status) => FloatingActionButton(
+          heroTag: Text("Btn1"),
+          onPressed: () => Navigator.pushNamed(context, "/cart"),
+          // ignore: deprecated_member_use
+          backgroundColor: context.theme.buttonColor,
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
+        ).badge(
+            color: Vx.gray200,
+            size: 20,
+            count: _cart.items.length,
+            textStyle: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            )),
       ),
       body: SafeArea(
         child: Container(
